@@ -14,7 +14,7 @@
         <input min="1" max="20" type="number" step="0.01" v-model="input.width" placeholder="In meters..." required />
       </div>
       <div class="question">
-        <h2>Dak</h2>
+        <h2>Dakvorm</h2>
         <input type="radio" id="Zadeldak" value="gableRoof" v-model="input.roofShape" name="roof" checked />
         <label for="Zadeldak">Zadel</label>
         <input type="radio" id="Platdak" value="flatRoof" v-model="input.roofShape" name="roof" />
