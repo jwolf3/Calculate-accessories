@@ -88,13 +88,15 @@
       <p>Oppervlakte {{ input.surface }} m2</p>
       <p>Omtrek {{ input.circumference }} m1</p>
       <hr />
-      {{ accessoires }}
+      <div class="list">{{ accessoires }}</div>
+      <img src=".//assets/copy.png" class="copy" @click="copyToClipboard" />
     </div>
   </main>
 </template>
 
 <script setup>
   import { ref, reactive } from "vue";
+  import Clipboard from "clipboard";
 
   const input = reactive({
     palen: "",
@@ -121,6 +123,7 @@
     input.width = "";
     input.roofShape = "gableRoof";
     submitted.value = false;
+    window.scrollTo(0, 0);
   };
 
   const checked = reactive({
@@ -189,6 +192,13 @@
         ", 11-115-0011-0:" +
         sequence;
     }
+  };
+  const copyToClipboard = () => {
+    const text = accessoires.value;
+    const clipboard = new Clipboard(".button", {
+      text: () => text,
+    });
+    clipboard.onClick(event);
   };
 </script>
 
@@ -269,8 +279,27 @@
   .answer {
     background: #429e52;
     margin: 1.5rem 0;
-    padding: 1rem;
+    padding: 1rem 1rem 2rem 1rem;
     border-radius: 0.5rem;
     color: #fff;
+  }
+
+  .answer > hr {
+    margin: 0.5rem 0;
+  }
+
+  .list {
+    padding: 0.2rem;
+    background: #6ac479;
+    border-radius: 0.5rem;
+  }
+
+  .copy {
+    height: 1.2rem;
+    float: right;
+    margin-top: 5px;
+  }
+  .copy:hover {
+    cursor: pointer;
   }
 </style>
