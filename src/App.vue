@@ -52,10 +52,12 @@
             <label for="dakdoorvoer">Dakdoorvoer</label>
           </div>
           <div class="check">
-            <input type="checkbox" id="TTE" value="TTE" v-model="checked.TTE" /> <label for="TTE">TTE fundering</label>
+            <input type="checkbox" id="TTE" value="TTE" v-model="checked.TTE" />
+            <label for="TTE">TTE fundering</label>
           </div>
           <div class="check">
-            <input type="checkbox" id="extra" value="extra" v-model="checked.extra" /> <label for="extra">Extra</label>
+            <input type="checkbox" id="extra" value="extra" v-model="checked.extra" />
+            <label for="extra">Extra</label>
           </div>
           <div class="check">
             <input type="checkbox" id="verlichting" value="verlichting" v-model="checked.verlichting" />
