@@ -192,7 +192,9 @@
 
 <style scoped>
   main {
-    margin: 2rem;
+    margin: 0 auto;
+    max-width: 700px;
+    padding: 2rem;
   }
   .question {
     background: #fff;
