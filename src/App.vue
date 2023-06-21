@@ -1,5 +1,6 @@
 <template>
   <main>
+    <h1 v-if="data">Prismic: {{ $prismic.asText(data.data.title_name) }}</h1>
     <h1>Berekenen accessoires</h1>
     <form @submit.prevent="submitForm">
       <div class="question">
@@ -95,8 +96,11 @@
 </template>
 
 <script setup>
-  import { ref, reactive } from "vue";
+  import { ref, reactive, onMounted } from "vue";
   import Clipboard from "clipboard";
+  import { useSinglePrismicDocument } from "@prismicio/vue";
+
+  const { data } = useSinglePrismicDocument("title");
 
   const input = reactive({
     palen: "",
